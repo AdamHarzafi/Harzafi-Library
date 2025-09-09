@@ -1,0 +1,407 @@
+/* --- 1. IMPOSTAZIONI GLOBALI E VARIABILI --- */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --font-serif: 'Lora', serif;
+    --font-sans: 'Nunito Sans', sans-serif;
+    
+    --color-background: #F8F5F2; /* Un beige molto chiaro, "colore carta" */
+    --color-text: #2C2C2C; /* Grigio scuro quasi nero */
+    --color-text-light: #6B6B6B;
+    --color-primary: #C08261; /* Un marrone/terracotta caldo */
+    --color-secondary: #E2C799; /* Oro/sabbia spento */
+    --color-white: #FFFFFF;
+    --color-border: #EAE0D5;
+    
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.7;
+    margin: 0;
+    font-size: 16px;
+    opacity: 0; /* Inizialmente invisibile per l'animazione */
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- 2. ANIMAZIONI E TRANSIZIONI --- */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    z-index: 9999;
+    transform: scaleY(1);
+    transform-origin: top;
+    animation: slideUp 1s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+}
+
+@keyframes slideUp {
+    to {
+        transform: scaleY(0);
+    }
+}
+
+
+/* --- 3. HEADER E NAVIGAZIONE --- */
+.main-header {
+    background: rgba(248, 245, 242, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--color-text);
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.logo-link { text-decoration: none; }
+
+.main-nav a {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin-left: 30px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.main-nav a:hover { color: var(--color-text); }
+.main-nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* --- 4. SEZIONI PRINCIPALI (HERO, BOOK-GRID) --- */
+.hero {
+    background-color: var(--color-secondary);
+    background-image: linear-gradient(135deg, var(--color-secondary) 0%, #e8d5b1 100%);
+    text-align: center;
+    padding: 120px 0;
+}
+
+.hero h2 {
+    font-family: var(--font-serif);
+    font-size: 52px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hero p {
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-text-light);
+}
+
+.book-section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 45px;
+}
+
+.book-card {
+    background: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.book-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-medium);
+}
+
+.book-cover-wrapper {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.05);
+}
+
+.book-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.book-title {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    color: var(--color-text);
+}
+
+.book-author {
+    font-size: 15px;
+    color: var(--color-text-light);
+    margin: 0 0 16px 0;
+}
+
+.book-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: auto;
+}
+
+
+/* --- 5. PAGINA DETTAGLI LIBRO --- */
+#page-libro main {
+    padding: 60px 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+    transition: color 0.3s ease;
+}
+.back-link:hover {
+    color: var(--color-primary);
+}
+.back-link svg {
+    transition: transform 0.3s ease;
+}
+.back-link:hover svg {
+    transform: translateX(-4px);
+}
+
+.book-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.book-detail-cover img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium);
+}
+
+.book-detail-info h2 {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+}
+
+.book-detail-info .author {
+    font-size: 20px;
+    color: var(--color-text-light);
+    margin-bottom: 30px;
+}
+
+.book-detail-info .price {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+}
+
+.book-meta {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.meta-item {
+    font-size: 15px;
+}
+.meta-item span {
+    display: block;
+    font-weight: 300;
+    color: var(--color-text-light);
+}
+.meta-item strong {
+    font-weight: 700;
+}
+
+.description {
+    margin-top: 50px;
+}
+
+.description h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+}
+
+.description p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--color-text-light);
+}
+
+.book-not-found {
+    text-align: center;
+    padding: 80px 0;
+}
+
+
+/* --- 6. FOOTER --- */
+.main-footer {
+    background-color: #EAE0D5;
+    color: var(--color-text-light);
+    padding: 60px 0 30px 0;
+    margin-top: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h5 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.footer-column p, .footer-column li { font-size: 15px; }
+.footer-column ul { list-style: none; padding: 0; margin: 0; }
+.footer-column ul li { margin-bottom: 10px; }
+.footer-column a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-column a:hover { color: var(--color-primary); }
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #DCD0C0;
+    font-size: 14px;
+}
+.footer-bottom a {
+     color: var(--color-text);
+     font-weight: 600;
+     text-decoration: none;
+}
+
+/* --- 7. RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    .book-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .hero h2 { font-size: 38px; }
+    .hero p { font-size: 16px; }
+    .section-title { font-size: 32px; }
+    .book-detail-info h2 { font-size: 36px; }
+
+    .main-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
