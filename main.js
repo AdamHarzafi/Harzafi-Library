@@ -13,59 +13,59 @@ const books = [
         year: '2022-2025'
     },
     {
-        id: 'cecita',
-        title: 'Cecità',
-        author: 'José Saramago',
-        price: '15,00',
-        coverImage: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800',
-        description: 'Un\'epidemia di cecità bianca si diffonde in una città senza nome, mettendo a nudo la fragilità della civiltà e la vera natura dell\'essere umano. Un romanzo allegorico potente e indimenticabile, vincitore del Premio Nobel per la Letteratura.',
-        isbn: '978-88-078-8988-00', // Modificato
-        publisher: 'Feltrinelli',
-        year: '1995'
+        id: "L'amore, l'attesa e altro ancora (Tomo B)",
+        title: "L'amore, l'attesa e altro ancora (Tomo B)",
+        author: 'Vincenzo Jacomuzzi, Matteo Leonardi, Barbara Franco, Maria Elisabetta Dulbecco',
+        price: '0,00 Prezzo non disponibile (Trattabile)',
+        coverImage: 'https://i.ibb.co/gZJzKdnQ/9788805079568.jpg"',
+        description: 'trattato bene, come nuovo. Singolo',
+        isbn: '9788805079568', // Modificato
+        publisher: 'SEI',
+        year: '2022 (prima edizione)'
     },
     {
-        id: 'larte-della-gioia',
-        title: 'L\'Arte della Gioia',
-        author: 'Goliarda Sapienza',
-        price: '22,00',
-        coverImage: 'https://images.unsplash.com/photo-1543002588-b9b6366941af?q=80&w=800',
-        description: 'La storia epica e scandalosa di Modesta, una donna siciliana nata all\'inizio del XX secolo, che attraversa la storia d\'Italia con una sete insaziabile di libertà e conoscenza. Un romanzo postumo diventato un caso letterario mondiale.',
-        isbn: '978-88-062-1872-00', // Modificato
-        publisher: 'Einaudi',
-        year: '1998'
+        id: "L'amore, l'attesa e altro ancora (I testi e la scrittura)",
+        title: "L'amore, l'attesa e altro ancora (I testi e la scrittura)",
+        author: 'Vincenzo Jacomuzzi, Matteo Leonardi, Barbara Franco, Maria Elisabetta Dulbecco',
+        price: '0,00 Prezzo non disponibile (Trattabile)',
+        coverImage: 'https://i.ibb.co/gZJzKdnQ/9788805079568.jpg',
+        description: 'Usato, come nuovo. Non ci sono altri pezzi.',
+        isbn: '9788805079582', // Modificato
+        publisher: 'SEI',
+        year: '2022 (prima edizione)'
     },
     {
-        id: 'factfulness',
-        title: 'Factfulness',
-        author: 'Hans Rosling',
-        price: '20,00',
-        coverImage: 'https://images.unsplash.com/photo-1592496431122-2349e0fbc666?q=80&w=800',
-        description: 'Dieci istinti che ci portano a interpretare il mondo in modo sbagliato e perché le cose vanno meglio di come pensiamo. Hans Rosling, con dati e aneddoti illuminanti, ci offre gli strumenti per comprendere il mondo in modo più obiettivo e ottimista.',
-        isbn: '978-88-171-0857-00', // Modificato
-        publisher: 'Rizzoli',
+        id: 'È tutto dire. Corso di grammatica. Italianofacile. Percorsi per BES-DSA e BES-L2.',
+        title: 'È tutto dire. Corso di grammatica. Italianofacile. Percorsi per BES-DSA e BES-L2.',
+        author: 'Anna Maria Mandelli, Anna Degani, Pierluca Merlisenna',
+        price: '3,50',
+        coverImage: 'https://i.ibb.co/wbPKv33/9788805078707-0-350-0-75.jpg',
+        description: 'Usato, come nuovo. Non ci sono altri pezzi.',
+        isbn: '9788805078707', // Modificato
+        publisher: 'SEI',
+        year: '2021'
+    },
+    {
+        id: 'Graph. Autocad.',
+        title: 'Graph. Autocad.',
+        author: 'Gian Marco Dellavecchia',
+        price: '6,51',
+        coverImage: 'https://i.ibb.co/zV8H9pSd/9788805076710-0-500-0-75.jpg',
+        description: 'Usato, come nuovo. Non ci sono altri pezzi.',
+        isbn: '9788805076710', // Modificato
+        publisher: 'SEI',
         year: '2018'
     },
     {
-        id: 'la-fisica-che-ci-piace',
-        title: 'La fisica che ci piace',
-        author: 'Vincenzo Schettini',
-        price: '17,90',
-        coverImage: 'https://images.unsplash.com/photo-1524578271613-d550eace3c92?q=80&w=800',
-        description: 'Un viaggio sorprendente e divertente nel mondo della fisica, spiegato in modo semplice e accessibile a tutti. Dal Big Bang ai buchi neri, Vincenzo Schettini rende la scienza una materia affascinante e alla portata di chiunque.',
-        isbn: '978-88-918-3422-00', // Modificato
-        publisher: 'Mondadori Electa',
-        year: '2022'
-    },
-    {
-        id: 'bambine-ribelli',
-        title: 'Storie della buonanotte per bambine ribelli',
-        author: 'Favilli & Cavallo',
-        price: '19,00',
-        coverImage: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800',
-        description: 'Cento biografie di donne straordinarie che hanno cambiato il mondo, da scienziate a artiste, da attiviste a regine. Un libro splendidamente illustrato che ispira le bambine (e i bambini) a sognare in grande e a non arrendersi mai.',
-        isbn: '978-88-046-7798-00', // Modificato
-        publisher: 'Mondadori',
-        year: '2016'
+        id: 'È tutto dire. Corso di grammatica',
+        title: 'È tutto dire. Corso di grammatica',
+        author: 'Anna Maria Mandelli, Anna Degani, Pierluca Merlisenna',
+        price: '12,00',
+        coverImage: 'https://i.ibb.co/B2kCnb20/TUTTO-DIRE.png',
+        description: 'Usato, come nuovo. Non ci sono altri pezzi.',
+        isbn: '9788805078691', // Modificato
+        publisher: 'SEI',
+        year: '2021'
     }
 ];
 
