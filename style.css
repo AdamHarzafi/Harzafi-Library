@@ -5,13 +5,14 @@
     --font-serif: 'Lora', serif;
     --font-sans: 'Nunito Sans', sans-serif;
     
-    --color-background: #F8F5F2; /* Un beige molto chiaro, "colore carta" */
-    --color-text: #2C2C2C; /* Grigio scuro quasi nero */
-    --color-text-light: #6B6B6B;
-    --color-primary: #C08261; /* Un marrone/terracotta caldo */
-    --color-secondary: #E2C799; /* Oro/sabbia spento */
+    /* MODIFICA: Nuova palette con l'azzurro come colore principale */
+    --color-background: #F8F9FA; /* Un bianco leggermente spento */
+    --color-text: #212529; /* Grigio scuro quasi nero */
+    --color-text-light: #6C757D;
+    --color-primary: #007BFF; /* Azzurro/Blu primario */
+    --color-secondary: #BDE0FE; /* Azzurro chiaro per lo sfondo hero */
     --color-white: #FFFFFF;
-    --color-border: #EAE0D5;
+    --color-border: #E9ECEF;
     
     --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
     --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -45,6 +46,7 @@ body {
     }
 }
 
+/* MODIFICA: Animazione di transizione cambiata da "tenda" a "dissolvenza" */
 .page-transition {
     position: fixed;
     top: 0;
@@ -53,21 +55,21 @@ body {
     height: 100%;
     background-color: var(--color-background);
     z-index: 9999;
-    transform: scaleY(1);
-    transform-origin: top;
-    animation: slideUp 1s cubic-bezier(0.83, 0, 0.17, 1) forwards;
+    opacity: 1;
+    animation: fadeOut 0.8s ease-in-out forwards;
 }
 
-@keyframes slideUp {
+@keyframes fadeOut {
     to {
-        transform: scaleY(0);
+        opacity: 0;
+        visibility: hidden; /* Nasconde l'elemento dopo l'animazione */
     }
 }
 
 
 /* --- 3. HEADER E NAVIGAZIONE --- */
 .main-header {
-    background: rgba(248, 245, 242, 0.8);
+    background: rgba(248, 249, 250, 0.8); /* Sfondo leggermente aggiornato */
     backdrop-filter: blur(10px);
     padding: 20px 0;
     border-bottom: 1px solid var(--color-border);
@@ -126,7 +128,7 @@ body {
 /* --- 4. SEZIONI PRINCIPALI (HERO, BOOK-GRID) --- */
 .hero {
     background-color: var(--color-secondary);
-    background-image: linear-gradient(135deg, var(--color-secondary) 0%, #e8d5b1 100%);
+    background-image: linear-gradient(135deg, var(--color-secondary) 0%, #a2d2ff 100%); /* Sfumatura azzurra */
     text-align: center;
     padding: 120px 0;
 }
@@ -144,7 +146,7 @@ body {
     font-weight: 300;
     max-width: 600px;
     margin: 0 auto;
-    color: var(--color-text-light);
+    color: #003049; /* Testo più scuro per contrasto sull'azzurro */
 }
 
 .book-section {
@@ -240,9 +242,33 @@ body {
 }
 
 
-/* --- 5. PAGINA DETTAGLI LIBRO --- */
-#page-libro main {
+/* --- 5. PAGINA DETTAGLI LIBRO E PAGINE TESTUALI --- */
+#page-libro main, .content-section {
     padding: 60px 0;
+}
+
+.text-container h2, .text-container h3 {
+    font-family: var(--font-serif);
+}
+
+.text-container .page-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+.text-container .last-updated {
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+.text-container h3 {
+    font-size: 28px;
+    margin-top: 40px;
+}
+.text-container ul {
+    padding-left: 20px;
+    list-style: square;
+}
+.text-container li {
+    margin-bottom: 10px;
 }
 
 .back-link {
@@ -335,7 +361,7 @@ body {
 .description p {
     font-size: 17px;
     line-height: 1.8;
-    color: var(--color-text-light);
+    color: var(--color-text); /* Testo più scuro per leggibilità */
 }
 
 .book-not-found {
@@ -346,7 +372,7 @@ body {
 
 /* --- 6. FOOTER --- */
 .main-footer {
-    background-color: #EAE0D5;
+    background-color: #e9ecef; /* Colore aggiornato */
     color: var(--color-text-light);
     padding: 60px 0 30px 0;
     margin-top: auto;
@@ -379,7 +405,7 @@ body {
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid #DCD0C0;
+    border-top: 1px solid #dee2e6; /* Colore aggiornato */
     font-size: 14px;
 }
 .footer-bottom a {
