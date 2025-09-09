@@ -1,5 +1,4 @@
 // --- DATABASE DEI LIBRI ---
-// MODIFICA: Ho sostituito "pages" con "isbn" e inserito i nuovi valori.
 const books = [
     {
         id: 'il-codice-anima',
@@ -8,7 +7,7 @@ const books = [
         price: '7,25',
         coverImage: 'https://i.ibb.co/Wv9bsP4L/61y-WFZr-AX7-L.jpg" ',
         description: 'Usato, come nuovo. Non ci sono altri pezzi.',
-        isbn: '978-88-08-72093-1', // Modificato
+        isbn: '978-88-08-72093-1',
         publisher: 'Zanichelli',
         year: '2022-2025'
     },
@@ -19,7 +18,7 @@ const books = [
         price: '0,00 Prezzo non disponibile (Trattabile)',
         coverImage: 'https://i.ibb.co/gZJzKdnQ/9788805079568.jpg"',
         description: 'trattato bene, come nuovo. Singolo',
-        isbn: '9788805079568', // Modificato
+        isbn: '9788805079568',
         publisher: 'SEI',
         year: '2022 (prima edizione)'
     },
@@ -30,7 +29,7 @@ const books = [
         price: '0,00 Prezzo non disponibile (Trattabile)',
         coverImage: 'https://i.ibb.co/gZJzKdnQ/9788805079568.jpg',
         description: 'Usato, come nuovo. Non ci sono altri pezzi.',
-        isbn: '9788805079582', // Modificato
+        isbn: '9788805079582',
         publisher: 'SEI',
         year: '2022 (prima edizione)'
     },
@@ -41,7 +40,7 @@ const books = [
         price: '3,50',
         coverImage: 'https://i.ibb.co/wbPKv33/9788805078707-0-350-0-75.jpg',
         description: 'Usato, come nuovo. Non ci sono altri pezzi.',
-        isbn: '9788805078707', // Modificato
+        isbn: '9788805078707',
         publisher: 'SEI',
         year: '2021'
     },
@@ -52,7 +51,7 @@ const books = [
         price: '6,51',
         coverImage: 'https://i.ibb.co/zV8H9pSd/9788805076710-0-500-0-75.jpg',
         description: 'Usato, come nuovo. Non ci sono altri pezzi.',
-        isbn: '9788805076710', // Modificato
+        isbn: '9788805076710',
         publisher: 'SEI',
         year: '2018'
     },
@@ -63,7 +62,7 @@ const books = [
         price: '12,00',
         coverImage: 'https://i.ibb.co/B2kCnb20/TUTTO-DIRE.png',
         description: 'Usato, come nuovo. Non ci sono altri pezzi.',
-        isbn: '9788805078691', // Modificato
+        isbn: '9788805078691',
         publisher: 'SEI',
         year: '2021'
     }
@@ -72,14 +71,14 @@ const books = [
 // Funzione che si esegue al caricamento del documento
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Inizializza le animazioni di AOS
+    // MODIFICA: Inizializza le animazioni di AOS su tutte le pagine
     AOS.init({
         duration: 800,
         easing: 'ease-in-out-cubic',
         once: true,
     });
 
-    // Controlla su quale pagina ci troviamo
+    // Controlla su quale pagina ci troviamo per eseguire codice specifico
     const pageId = document.body.id;
 
     if (pageId === 'page-home') {
