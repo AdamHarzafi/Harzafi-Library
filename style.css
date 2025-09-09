@@ -1,16 +1,15 @@
 /* --- 1. IMPOSTAZIONI GLOBALI E VARIABILI --- */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+/* NOTA: L'import dei font è stato spostato nell'HTML per ottimizzare le performance. */
 
 :root {
     --font-serif: 'Lora', serif;
     --font-sans: 'Nunito Sans', sans-serif;
     
-    /* MODIFICA: Nuova palette con l'azzurro come colore principale */
-    --color-background: #F8F9FA; /* Un bianco leggermente spento */
-    --color-text: #212529; /* Grigio scuro quasi nero */
+    --color-background: #F8F9FA;
+    --color-text: #212529;
     --color-text-light: #6C757D;
-    --color-primary: #007BFF; /* Azzurro/Blu primario */
-    --color-secondary: #BDE0FE; /* Azzurro chiaro per lo sfondo hero */
+    --color-primary: #007BFF;
+    --color-secondary: #BDE0FE;
     --color-white: #FFFFFF;
     --color-border: #E9ECEF;
     
@@ -29,7 +28,7 @@ body {
     line-height: 1.7;
     margin: 0;
     font-size: 16px;
-    opacity: 0; /* Inizialmente invisibile per l'animazione */
+    opacity: 0;
     animation: fadeIn 0.8s ease-in-out forwards;
 }
 
@@ -46,7 +45,6 @@ body {
     }
 }
 
-/* MODIFICA: Animazione di transizione cambiata da "tenda" a "dissolvenza" */
 .page-transition {
     position: fixed;
     top: 0;
@@ -62,14 +60,14 @@ body {
 @keyframes fadeOut {
     to {
         opacity: 0;
-        visibility: hidden; /* Nasconde l'elemento dopo l'animazione */
+        visibility: hidden;
     }
 }
 
 
 /* --- 3. HEADER E NAVIGAZIONE --- */
 .main-header {
-    background: rgba(248, 249, 250, 0.8); /* Sfondo leggermente aggiornato */
+    background: rgba(248, 249, 250, 0.8);
     backdrop-filter: blur(10px);
     padding: 20px 0;
     border-bottom: 1px solid var(--color-border);
@@ -128,7 +126,7 @@ body {
 /* --- 4. SEZIONI PRINCIPALI (HERO, BOOK-GRID) --- */
 .hero {
     background-color: var(--color-secondary);
-    background-image: linear-gradient(135deg, var(--color-secondary) 0%, #a2d2ff 100%); /* Sfumatura azzurra */
+    background-image: linear-gradient(135deg, var(--color-secondary) 0%, #a2d2ff 100%);
     text-align: center;
     padding: 120px 0;
 }
@@ -146,7 +144,7 @@ body {
     font-weight: 300;
     max-width: 600px;
     margin: 0 auto;
-    color: #003049; /* Testo più scuro per contrasto sull'azzurro */
+    color: #003049;
 }
 
 .book-section {
@@ -361,7 +359,7 @@ body {
 .description p {
     font-size: 17px;
     line-height: 1.8;
-    color: var(--color-text); /* Testo più scuro per leggibilità */
+    color: var(--color-text);
 }
 
 .book-not-found {
@@ -372,7 +370,7 @@ body {
 
 /* --- 6. FOOTER --- */
 .main-footer {
-    background-color: #e9ecef; /* Colore aggiornato */
+    background-color: #e9ecef;
     color: var(--color-text-light);
     padding: 60px 0 30px 0;
     margin-top: auto;
@@ -405,7 +403,7 @@ body {
 .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid #dee2e6; /* Colore aggiornato */
+    border-top: 1px solid #dee2e6;
     font-size: 14px;
 }
 .footer-bottom a {
